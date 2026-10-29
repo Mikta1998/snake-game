@@ -46,3 +46,13 @@ class Snake:
             y_cor = self.body_segments[segment - 1].ycor()
             self.body_segments[segment].setposition(x_cor, y_cor)
         self.head.forward(SNAKE_MOVEMENT_SPEED)
+
+    def increase_snake_size(self):
+        self.body_segment = Turtle()
+        self.body_segment.penup()
+        self.body_segment.color("white")
+        self.body_segment.shape("square")
+        x_cor = self.body_segments[-1].xcor()
+        y_cor = self.body_segments[-1].ycor()
+        self.body_segment.goto(x_cor, y_cor)
+        self.body_segments.append(self.body_segment)
